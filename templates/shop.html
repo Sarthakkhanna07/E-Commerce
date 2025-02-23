@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Shop
+{% endblock %}
+
+{% block main %}
+    <section id="page-header">
+        <h2>Shop Now</h2>
+        <p>Up to 70% off and free delivery</p>
+    </section>
+
+    <section id="product1" class="section-p1">
+        <div class="pro-container">
+            {% for product in products %}
+                <div class="pro" onclick="window.location.href='{{ url_for('product', product_id=product.id) }}';">
+                    <img src="{{ url_for('static', filename=product.image) }}" alt="product">
+                    <div class="description">
+                        <span>adidas</span>
+                        <h5>{{ product.name }}</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half"></i>
+                        </div>
+                        <h4>${{ product.price }}</h4>
+                    </div>
+                    <form action="/shop" method="POST" class="add-to-cart-form">
+                        <input type="hidden" name="product_id" value="{{ product.id }}">
+                        <input type="hidden" name="product_image" value="{{ product.image }}">
+                        <input type="hidden" name="product_price" value="{{ product.price }}">
+                        <input type="hidden" name="product_name" value="{{ product.name }}">
+                        <input type="hidden" name="quantity" value="1">
+                        <input type="hidden" name="size" value="Small">
+                        <button type="submit" class="cart-btn"><i class="fal fa-shopping-cart cart"></i></button>
+                    </form>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <section id="pagination" class="section-p1">
+        {% if page > 1 %}
+            <a href="{{ url_for('shop', page=page-1) }}"><i class="fal fa-long-arrow-alt-left"></i> Previous</a>
+        {% endif %}
+        {% for p in range(1, total_pages + 1) %}
+            <a href="{{ url_for('shop', page=p) }}" class="{% if p == page %}active{% endif %}">{{ p }}</a>
+        {% endfor %}
+        {% if page < total_pages %}
+            <a href="{{ url_for('shop', page=page+1) }}">Next <i class="fal fa-long-arrow-alt-right"></i></a>
+        {% endif %}
+    </section>
+
+{% endblock %}

@@ -1,0 +1,1039 @@
+/* making some own css to use again and again*/
+h1 {
+    font-size: 50px;
+    line-height: 64px;
+    color: #222;
+}
+
+h2 {
+    font-size: 46px;
+    line-height: 54px;
+    color: #222;
+}
+
+h4 {
+    font-size: 30px;
+    line-height: 64px;
+}
+
+h6 {
+    font-weight: 700;
+    font-size: 12px;
+}
+
+
+.section-p1 {
+    padding: 40px 80px;
+}
+
+.section-m1 {
+    margin: 40px 0;
+}
+
+button.normal,
+a.normal {
+    font-size: 14px;
+    font-weight: 600;
+    padding: 15px 30px;
+    color: #000;
+    background-color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    transition: 0.2s;
+}
+
+a.white {
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 11px 18px;
+    color: #fff;
+    background-color: transparent;
+    cursor: pointer;
+    border: 1px solid #fff;
+    outline: none;
+    transition: 0.2s;
+}
+
+/* navbar css */
+.custom-navbar {
+    padding: 15px 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
+
+/* Size for brand */
+nav .navbar-brand {
+    font-size: xx-large;
+}
+
+nav .navbar-brand .logo {
+    vertical-align: middle;
+}
+
+nav .navbar-brand span {
+    font-size: 24px;
+}
+
+/* Colors for brand */
+nav .navbar-brand .blue {
+    color: #537fbe;
+}
+
+nav .navbar-brand .red {
+    color: #ea433b;
+}
+
+nav .navbar-brand .yellow {
+    color: #f5b82e;
+}
+
+nav .navbar-brand .green {
+    color: #2e944b;
+}
+
+/* nav items */
+.nav-item {
+    position: relative;
+    display: inline-block;
+}
+
+.nav-link img {
+    height: 24px;
+}
+
+.active-link {
+    color: #000;
+    font-weight: 600;
+}
+
+/* login and register */
+.login-container,
+.register-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+}
+
+.login,
+.register {
+    padding: 30px 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    background-color: #f9f9f9;
+}
+
+.login-heading,
+.register-heading {
+    margin-bottom: 20px;
+    font-size: 35px;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Apology css */
+#meme-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+/*badge on cart (number of items)*/
+.badge {
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    padding: 5px 10px;
+    border-radius: 50%;
+    background-color: red;
+    color: white;
+    font-size: 12px;
+}
+
+/* homepage big image and content css */
+#hero {
+    background-image: url("/static/hero.png");
+    height: 90vh;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top 25% right 0;
+    padding: 0 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+#hero h4 {
+    padding-bottom: 15px;
+}
+
+#hero h1 {
+    color: #088178;
+}
+
+#hero a {
+    background-image: url("/static/buttonback.png");
+    background-color: transparent;
+    color: black;
+    text-decoration: none;
+    font-weight: 500;
+    border: 0;
+    padding: 25px 80px 22px 65px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* feature section css */
+#feature {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+#feature .fe-box {
+    width: 180px;
+    text-align: center;
+    padding: 25px 15px;
+    box-shadow: 20px 20px 34px rgba(0, 0, 0, 0.03);
+    border: 1px solid #cce7d0;
+    border-radius: 4px;
+    margin: 15px 0;
+}
+
+#feature .fe-box img {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+#feature .fe-box:hover {
+    box-shadow: 10px 10px 54px rgba(70, 62, 221, 0.1);
+}
+
+#feature .fe-box h6 {
+    display: inline-block;
+    padding: 9px 8px 6px 8px;
+    line-height: 1;
+    border-radius: 4px;
+    color: #088178;
+    background-color: #fddde4;
+}
+
+/* homepage product section css */
+#product1 {
+    text-align: center;
+
+}
+
+#product1 {
+    text-align: center;
+
+}
+
+#product1 .pro-container {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+    flex-wrap: wrap;
+
+}
+
+#product1 .pro {
+    width: 23%;
+    min-width: 250px;
+    padding: 10px 12px;
+    border: 1px solid #cce7d0;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.02);
+    margin: 15px 0;
+    transition: 0.2s ease;
+    position: relative;
+
+}
+
+#product1 .pro:hover {
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.06);
+}
+
+#product1 .pro img {
+    width: 100%;
+    border-radius: 20px;
+}
+
+#product1 .pro .description {
+    text-align: start;
+    padding: 10px 0;
+}
+
+#product1 .pro .description span {
+    color: #606063;
+    font-size: 12px;
+
+}
+
+#product1 .pro .description h5 {
+
+    color: #1a1a1a;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+#product1 .pro .description i {
+    font-size: 14px;
+    color: rgb(243, 181, 25);
+
+}
+
+#product1 .pro .description h4 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #088178;
+}
+
+#product1 .pro .cart {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 50px;
+    background-color: #e8f6ea;
+    font-weight: 500;
+    color: #088178;
+    border: 1px solid #cce7d0;
+    position: absolute;
+    bottom: 40px;
+    right: 10px;
+}
+
+#product1 .pro .cart:hover {
+    color: #04FF2B;
+}
+
+/* banner css */
+#banner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-image: url("/static/banners/b2.jpg");
+    width: 100%;
+    height: 35vh;
+    background-size: cover;
+    background-position: center;
+}
+
+#banner h4 {
+    color: #fff;
+    font-size: 26px;
+
+}
+
+#banner h2 {
+    color: #fff;
+    font-size: 35px;
+
+}
+
+#banner h2 span {
+    color: #ef3636;
+
+}
+
+#banner button:hover {
+    background: #088178;
+    color: #fff;
+}
+
+#banner a:hover {
+    background: #088178;
+    color: #fff;
+}
+
+/* small banner css */
+#sm-banner {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+#sm-banner .banner-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    background-image: url("/static/banners/b17.jpg");
+    min-width: 650px;
+    height: 50vh;
+    background-size: cover;
+    background-position: center;
+    padding: 30px;
+}
+
+#sm-banner .banner-box2 {
+    background-image: url("/static/banners/b10.jpg");
+}
+
+#sm-banner h4 {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 300;
+}
+
+#sm-banner h2 {
+    color: #fff;
+    font-size: 28px;
+    font-weight: 800;
+}
+
+#sm-banner span {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    padding-bottom: 15px;
+}
+
+#sm-banner .banner-box:hover a {
+    background: #088178;
+    border: 1px solid #088178;
+
+}
+
+/* banners at homepage last */
+#banner-3 {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0 80px;
+
+}
+
+#banner-3 .banner-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    background-image: url("/static/banners/b7.jpg");
+    min-width: 30%;
+    height: 30vh;
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+#banner-3 .banner-box2 {
+    background-image: url("/static/banners/b4.jpg");
+}
+
+#banner-3 .banner-box3 {
+    background-image: url("/static/banners/b18.jpg");
+}
+
+#banner-3 h2 {
+    color: #fff;
+    font-weight: 900;
+    font-size: 22px;
+}
+
+#banner-3 h3 {
+    color: #ec544e;
+    font-weight: 800;
+    font-size: 15px;
+}
+
+/* shop page css */
+#page-header {
+    background-image: url("/static/banners/b1.jpg");
+    height: 40vh;
+    width: 100%;
+    background-size: cover;
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+}
+
+#page-header h2 {
+    color: #fff;
+    font-size: 50px
+}
+
+#page-header p {
+    color: #fff;
+    font-size: 30px;
+}
+
+.add-to-cart-form {
+    display: inline;
+}
+
+.cart-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+#pagination {
+    text-align: center;
+}
+
+#pagination a {
+    text-decoration: none;
+    background-color: #088178;
+    padding: 15px 20px;
+    border-radius: 4px;
+    color: #fff;
+    font-weight: 600;
+}
+
+#pagination a i {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* Single product detail */
+#prodetails {
+    display: flex;
+    margin-top: 20px;
+}
+
+#prodetails .single-pro-image {
+    width: 40%;
+    margin-right: 50px;
+}
+
+.small-img-group {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.small-img-col {
+    flex-basis: 24%;
+    cursor: pointer;
+}
+
+/* Adjustments for different numbers of images */
+.small-img-group img {
+    max-width: 100%;
+}
+
+/* For exactly 2 images */
+.small-img-group.two-images .small-img-col {
+    flex-basis: 18.5%;
+}
+
+/* For exactly 3 images */
+.small-img-group.three-images .small-img-col {
+    flex-basis: 18.5%;
+}
+
+/* For exactly 4 images */
+.small-img-group.four-images .small-img-col {
+    flex-basis: 18.5%;
+}
+
+/* For exactly 5 images */
+.small-img-group.five-images .small-img-col {
+    flex-basis: 18.5%;
+}
+
+#prodetails .single-pro-details {
+    width: 50%;
+    padding-top: 30px;
+}
+
+#prodetails .single-pro-details h4 {
+    padding: 40px 0 20px 0;
+}
+
+#prodetails .single-pro-details h2 {
+    font-size: 26px;
+}
+
+#prodetails .single-pro-details select {
+    display: block;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+}
+
+#prodetails .single-pro-details input {
+    width: 50px;
+    height: 47px;
+    padding-left: 10px;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+#prodetails .single-pro-details input:focus {
+    outline: none;
+}
+
+#prodetails .single-pro-details button {
+    background: #088178;
+    color: #fff;
+}
+
+#prodetails .single-pro-details span {
+    line-height: 25px;
+}
+
+
+
+/* about us css */
+#page-header-about {
+    background-image: url("/static/banners/banner.png");
+    height: 40vh;
+    width: 100%;
+    background-size: cover;
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+}
+
+#page-header-about h2 {
+    color: #fff;
+    font-size: 50px
+}
+
+
+.section-p2 {
+    padding: 60px 0;
+    background-color: #f8f8f8;
+    text-align: center;
+}
+
+.section-p2 p {
+    font-size: 18px;
+    color: #555;
+    max-width: 800px;
+    margin: 0 auto 40px;
+    line-height: 1.6;
+}
+
+#banner-about {
+    background-image: url("/static/banners/a6.jpg");
+    width: 100%;
+    height: 40vh;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    overflow: hidden;
+}
+
+
+.about-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.about-content div {
+    max-width: 300px;
+    margin: 20px;
+}
+
+.about-content h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #444;
+}
+
+.about-content p,
+.about-content ul {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.5;
+}
+
+.about-content ul {
+    list-style: none;
+    padding: 0;
+}
+
+.about-content ul li {
+    margin-bottom: 10px;
+}
+
+.team {
+    margin-top: 60px;
+}
+
+.team h3 {
+    font-size: 30px;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.team-members {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.team-member {
+    max-width: 200px;
+    margin: 20px;
+    text-align: center;
+}
+
+.team-member img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    object-fit: cover;
+}
+
+
+.team-member h4 {
+    font-size: 20px;
+    margin-bottom: 5px;
+    color: #444;
+}
+
+.team-member p {
+    font-size: 16px;
+    color: #666;
+}
+
+/* contact css */
+#page-header-contact {
+    background-image: url('/static/banners/contact.jpg');
+    height: 40vh;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    padding: 20px;
+}
+
+#contact-details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#contact-details .details {
+    width: 60%;
+}
+
+#contact-details .details span,
+#form-details form span {
+    font-size: 12px;
+}
+
+#contact-details .details h2,
+#form-details form h2 {
+    font-size: 26px;
+    line-height: 35px;
+    padding: 20px 0;
+}
+
+#contact-details .details h3 {
+    font-size: 16px;
+    padding-bottom: 15px;
+}
+
+#contact-details .details li {
+    list-style: none;
+    display: flex;
+    padding: 10px 0;
+}
+
+#contact-details .details li i {
+    font-size: 14px;
+    padding-right: 22px;
+}
+
+#contact-details .details li p {
+    margin: 0;
+    font-size: 14px;
+}
+
+#contact-details .map {
+    width: 55%;
+    height: 400px;
+}
+
+#contact-details .map iframe {
+    width: 100%;
+    height: 100%;
+}
+
+#form-details {
+    margin: 30px;
+    padding: 30px;
+    border: 1px solid #e1e1e1;
+}
+
+#form-details form {
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#form-details form input,
+#form-details form textarea {
+    width: 100%;
+    padding: 12px 15px;
+    outline: none;
+    margin-bottom: 20px;
+    border: 1px solid #e1e1e1;
+}
+
+#form-details button {
+    background-color: #088178;
+    color: #fff;
+    padding: 10px 25px;
+}
+
+/* FAQ page css */
+.faq-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.faq-item {
+    margin-bottom: 30px;
+}
+
+.faq-item h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.faq-item p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Cart css */
+#cart {
+    width: 100%;
+
+}
+
+#cart table {
+    width: 100%;
+
+    margin-bottom: 20px;
+    background-color: #fff;
+}
+
+#cart table thead {
+    border: 1px solid #e2e9e1;
+    border-left: none;
+    border-right: none;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+#cart table thead td {
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 16px;
+    padding: 18px 0;
+}
+
+#cart table tbody tr td {
+    padding: 15px 10px;
+    border-bottom: 1px solid #e2e9e1;
+    text-align: center;
+    vertical-align: middle;
+}
+
+#cart table td img {
+    max-width: 100px;
+    height: auto;
+    border-radius: 5px;
+}
+
+#cart table td {
+    font-size: 14px;
+    color: #555;
+}
+
+#cart table tr:last-child td {
+    border-bottom: none;
+}
+
+.remove-btn {
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: #e74c3c;
+    cursor: pointer;
+}
+
+.remove-btn:hover {
+    color: #c0392b;
+}
+
+.cart-total {
+    text-align: right;
+    font-size: 18px;
+    margin-top: 20px;
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #e2e9e1;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cart-total h3 {
+    margin: 10px 0;
+    font-size: 22px;
+    color: #333;
+}
+
+a.normal {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #2ecc71;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+a.normal:hover {
+    background-color: #27ae60;
+}
+
+.cart-header {
+    background: url('your-header-image.jpg') no-repeat center center/cover;
+    padding: 100px 0;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.cart-header h2 {
+    font-size: 36px;
+    margin: 0;
+}
+
+/* checkout css if proceed to buy */
+.hidden {
+    display: none;
+}
+
+#thank-you {
+    text-align: center;
+    margin-top: 50px;
+}
+
+#thank-you img {
+    max-width: 50%;
+    height: auto;
+}
+
+#thank-you h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-top: 20px;
+}
+
+/* footer css */
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 40px 0;
+}
+
+.footer .container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-cols {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.footer-col {
+    flex: 1;
+    margin: 20px;
+    min-width: 200px;
+}
+
+.footer-col h4 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-col ul li a:hover {
+    color: #f0c14b;
+}
+
+.social-links a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    background-color: #444;
+    color: #fff;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+}
+
+.social-links a:hover {
+    background-color: #f0c14b;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    border-top: 1px solid #444;
+    padding-top: 20px;
+}
+
+/* my biggest css file 1000+ lines */

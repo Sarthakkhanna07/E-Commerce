@@ -1,0 +1,147 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+
+    <section id="hero">
+        <h4>Super Deals</h4>
+        <h2>Sale upto 70% off</h2>
+        <h1>On All Products</h1>
+        <p>Free Delivery till sale going on</p>
+        <a href="/shop">Shop Now</a>
+    </section>
+
+    <section id="feature" class="section-p1">
+        <div class="fe-box">
+            <img src="/static/feature-img/f1.png" alt="feature">
+            <h6>Free Shipping</h6>
+        </div>
+        <div class="fe-box">
+            <img src="/static/feature-img/f2.png" alt="feature">
+            <h6>Online Order</h6>
+        </div>
+        <div class="fe-box">
+            <img src="/static/feature-img/f3.png" alt="feature">
+            <h6>Save Money</h6>
+        </div>
+        <div class="fe-box">
+            <img src="/static/feature-img/f4.png" alt="feature">
+            <h6>Promotions</h6>
+        </div>
+        <div class="fe-box">
+            <img src="/static/feature-img/f5.png" alt="feature">
+            <h6>Happy Sell</h6>
+        </div>
+        <div class="fe-box">
+            <img src="/static/feature-img/f6.png" alt="feature">
+            <h6>24/7 Support</h6>
+        </div>
+    </section>
+
+    <section id="product1" class="section-p1">
+        <h2>Featured Products</h2>
+        <p>New Summer Collection</p>
+        <div class="pro-container">
+            {% for product in products[0:8] %}
+                <div class="pro" onclick="window.location.href='{{ url_for('product', product_id=product.id) }}';">
+                    <img src="{{ url_for('static', filename=product.image) }}" alt="product">
+                    <div class="description">
+                        <span>adidas</span>
+                        <h5>{{ product.name }}</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half"></i>
+                        </div>
+                        <h4>${{ product.price }}</h4>
+                    </div>
+                    <form action="/" method="POST" class="add-to-cart-form">
+                        <input type="hidden" name="product_id" value="{{ product.id }}">
+                        <input type="hidden" name="product_image" value="{{ product.image }}">
+                        <input type="hidden" name="product_price" value="{{ product.price }}">
+                        <input type="hidden" name="product_name" value="{{ product.name }}">
+                        <input type="hidden" name="quantity" value="1">
+                        <input type="hidden" name="size" value="Small">
+                        <button type="submit" class="cart-btn"><i class="fal fa-shopping-cart cart"></i></button>
+                    </form>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <section id="banner" class="section-m1">
+        <h4>Free Delivery</h4>
+        <h2>Up to <span>70% Off</span> On All t-shirts & Accessories</h2>
+        <a href="{{ url_for('shop') }}" class="normal">Explore More</a>
+    </section>
+
+    <section id="product1" class="section-p1">
+        <h2>New Arrivals</h2>
+        <p>Summer Collection New Mordern Design</p>
+        <div class="pro-container">
+            {% for product in products[8:16] %}
+                <div class="pro" onclick="window.location.href='{{ url_for('product', product_id=product.id) }}';">
+                    <img src="{{ url_for('static', filename=product.image) }}" alt="product">
+                    <div class="description">
+                        <span>adidas</span>
+                        <h5>{{ product.name }}</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half"></i>
+                        </div>
+                        <h4>${{ product.price }}</h4>
+                    </div>
+                    <form action="/" method="POST" class="add-to-cart-form">
+                        <input type="hidden" name="product_id" value="{{ product.id }}">
+                        <input type="hidden" name="product_image" value="{{ product.image }}">
+                        <input type="hidden" name="product_price" value="{{ product.price }}">
+                        <input type="hidden" name="product_name" value="{{ product.name }}">
+                        <input type="hidden" name="quantity" value="1">
+                        <input type="hidden" name="size" value="Small">
+                        <button type="submit" class="cart-btn"><i class="fal fa-shopping-cart cart"></i></button>
+                    </form>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <section id="sm-banner" class="section-p1">
+        <div class="banner-box">
+            <h4>Crazy Deals</h4>
+            <h2>Buy 1 Get 1 Free</h2>
+            <span>The best classic dresses on sale</span>
+            <a href="{{ url_for('shop') }}" class="white">Learn More</a>
+        </div>
+        <div class="banner-box banner-box2">
+            <h4>Spring/Summer</h4>
+            <h2>Upcoming season</h2>
+            <span>Buy Now</span>
+            <a href="{{ url_for('shop') }}" class="white">Collection</a>
+
+        </div>
+    </section>
+
+    <section id="banner-3">
+        <div class="banner-box">
+            <h2>SEASONAL SALE</h2>
+            <h3>Winter Collection At 50% OFF</h3>
+        </div>
+        <div class="banner-box banner-box2">
+            <h2>NEW FOOTWEAR COLLECTION</h2>
+            <h3>For Spring/summer</h3>
+        </div>
+        <div class="banner-box banner-box3">
+            <h2>T-SHIRTS</h2>
+            <h3>New Trendy Prints</h3>
+        </div>
+    </section>
+
+{% endblock %}

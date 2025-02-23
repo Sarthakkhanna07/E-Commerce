@@ -1,0 +1,83 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Cart
+{% endblock %}
+
+{% block main %}
+    <section id="page-header" class="cart-header">
+        <h2>Shopping Cart</h2>
+    </section>
+
+    <section id="cart" class="section-p1">
+        {% if cart_items %}
+            <table width="100%">
+                <thead>
+                    <tr>
+                        <td>Remove</td>
+                        <td>Image</td>
+                        <td>Product</td>
+                        <td>Size</td>
+                        <td>Price</td>
+                        <td>Quantity</td>
+                        <td>Subtotal</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in cart_items %}
+                        <tr>
+                            <td>
+                                <form action="/cart" method="POST">
+                                    <input type="hidden" name="product_id" value="{{ item.product_id }}">
+                                    <input type="hidden" name="size" value="{{ item.size }}">
+                                    <button type="submit" class="normal"><i class="far fa-times-circle"></i></button>
+                                </form>
+                                <td>
+                                    <a href="{{ url_for('product', product_id=item.product_id) }}">
+                                        <img src="{{ url_for('static', filename=item.image) }}" alt="{{ item.name }}" width="100">
+                                    </a>
+                                </td>
+                                <td>{{ item.name }}</td>
+                                <td>{{ item.size }}</td>
+                                <td>${{ item.price }}</td>
+                                <td>{{ item.quantity }}</td>
+                                <td>${{ item.price * item.quantity }}</td>
+                            </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            </section>
+
+            <section class="cart-total" id="total">
+                <h3>Total: ${{ cart_total }}</h3>
+                <a href="#" class="normal" id="proceed-to-checkout">Proceed to Checkout</a>
+            </section>
+
+            <div id="thank-you" class="hidden">
+                <img src="/static/banners/a5.jpg" alt="Thank You">
+                <h2>Thank you for shopping with us!</h2>
+            </div>
+
+        {% else %}
+            <h4>Your cart is empty.</h4>
+        {% endif %}
+
+
+<!-- script if the user proceed to buy, to show a thanks for shopping image -->
+        <script>
+            document.getElementById("proceed-to-checkout").addEventListener("click", function(event) {
+                event.preventDefault();
+                if (confirm("Are you sure you want to place the order?")) {
+                    document.getElementById("cart").classList.add("hidden");
+                    document.getElementById("total").classList.add("hidden");
+                    document.getElementById("page-header").classList.add("hidden");
+                    document.getElementById("thank-you").classList.remove("hidden");
+
+                    window.scrollTo({
+                        top: 0,
+                        behavior: "smooth"
+                    });
+                }
+            });
+        </script>
+{% endblock %}

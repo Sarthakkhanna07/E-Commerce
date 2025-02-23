@@ -1,0 +1,126 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Product
+{% endblock %}
+
+{% block main %}
+    <section id="prodetails" class="section-p1">
+        <div class="single-pro-image">
+            <img src="{{ url_for('static', filename=product.image) }}" width="100%" id="MainImg" alt="Product">
+            <div class="small-img-group {% if product.small_images|length == 2 %}two-images{% elif product.small_images|length == 3 %}three-images{% elif product.small_images|length == 4 %}four-images{% elif product.small_images|length == 5 %}five-images{% endif %}">
+                {% for img in product.small_images %}
+                    {% set linked_product = None %}
+                    {% for p in products if img in p.image %}
+                        {% set linked_product = p %}
+                        <div class="small-img-col">
+                            <img src="{{ url_for('static', filename=img) }}" width="100%" class="small-img" alt="Small Image" data-product-id="{{ linked_product.id }}" data-product-image="{{ linked_product.image }}" data-product-price="{{ linked_product.price }}" data-product-name="{{ linked_product.name }}">
+                        </div>
+                    {% endfor %}
+                {% endfor %}
+            </div>
+
+        </div>
+
+        <div class="single-pro-details">
+            <h5>Home / T-shirt</h5>
+            <h4 id="product-name">{{ product.name }}</h4>
+            <h2 id="product-price">${{ product.price }}</h2>
+            <form id="add-to-cart-form" action="{{ url_for('product', product_id=product.id) }}" method="POST">
+                <input type="hidden" name="product_id" value="{{ product.id }}">
+                <input type="hidden" name="product_image" value="{{ product.image }}">
+                <input type="hidden" name="product_price" value="{{ product.price }}">
+                <input type="hidden" name="product_name" value="{{ product.name }}">
+                <select name="size" id="size-select" required>
+                    <option value="" disabled selected>Select Size</option>
+                    <option>Small</option>
+                    <option>Medium</option>
+                    <option>Large</option>
+                    <option>XL</option>
+                    <option>XXL</option>
+                </select>
+                <input type="number" name="quantity" value="1" min="1">
+                <button type="submit" class="normal">Add To Cart</button>
+            </form>
+
+            <h4>Product Details</h4>
+            <span>Fabric constructed from 100% cotton, this classic fit preshrunk jersey knit provides unmatched comfort with each wear. Featuring a taped neck and shoulder, and a seamless double-needle collar, and available in a wide range of colors, it offers it all in the ultimate head-turning package.</span>
+        </div>
+
+    </section>
+    <section id="product1" class="section-p1">
+        <h2>Featured Products</h2>
+        <p>Summer Collection New Modern Design</p>
+        <div class="pro-container">
+            {% for featured_img in product.featured_images %}
+                {% set linked_product = products|selectattr("image", "equalto", featured_img)|list|first %}
+                {% if linked_product %}
+                    <div class="pro" onclick="window.location.href='{{ url_for('product', product_id=linked_product.id) }}';">
+                        <img src="{{ url_for('static', filename=featured_img) }}" alt="product">
+                        <div class="description">
+                            <span>adidas</span>
+                            <h5>{{ linked_product.name }}</h5>
+                            <div class="star">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half"></i>
+                            </div>
+                            <h4>${{ linked_product.price }}</h4>
+                        </div>
+                        <form action="{{ url_for('product', product_id=linked_product.id) }}" method="POST" class="add-to-cart-form">
+                            <input type="hidden" name="product_id" value="{{ linked_product.id }}">
+                            <input type="hidden" name="product_image" value="{{ linked_product.image }}">
+                            <input type="hidden" name="product_price" value="{{ linked_product.price }}">
+                            <input type="hidden" name="product_name" value="{{ linked_product.name }}">
+                            <input type="hidden" name="quantity" value="1">
+                            <input type="hidden" name="size" value="Small">
+                            <input type="hidden" name="redirect_url" value="{{ url_for('product', product_id=product.id) }}">
+                            <button type="submit" class="cart-btn"><i class="fal fa-shopping-cart cart"></i></button>
+                        </form>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </section>
+
+    <script>
+        var MainImg = document.getElementById("MainImg");
+        var smallimg = document.getElementsByClassName("small-img");
+        var addToCartForm = document.getElementById("add-to-cart-form");
+        var productIdInput = document.querySelector('input[name="product_id"]');
+        var productImageInput = document.querySelector('input[name="product_image"]');
+        var productPriceInput = document.querySelector('input[name="product_price"]');
+        var productNameInput = document.querySelector('input[name="product_name"]');
+        var productPrice = document.getElementById("product-price");
+        var productName = document.getElementById("product-name");
+
+        for (let i = 0; i < smallimg.length; i++) {
+            smallimg[i].onclick = function() {
+            // Update the main product image
+                MainImg.src = smallimg[i].src;
+
+            // Get the new product ID from the clicked small image
+                var newProductId = smallimg[i].getAttribute("data-product-id");
+                var newProductImage = smallimg[i].getAttribute("data-product-image");
+                var newProductPrice = smallimg[i].getAttribute("data-product-price");
+                var newProductName = smallimg[i].getAttribute("data-product-name");
+
+            // Update the form action URL with the new product ID
+                addToCartForm.action = "/product/" + newProductId;
+
+            // Update the hidden input value with the new product ID
+                productIdInput.value = newProductId;
+                productImageInput.value = newProductImage;
+                productPriceInput.value = newProductPrice;
+                productNameInput.value = newProductName;
+                productPrice.textContent = "$" + newProductPrice;
+                productName.textContent = newProductName;
+            }
+        }
+    </script>
+
+
+
+{% endblock %}

@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Contact Us
+{% endblock %}
+
+{% block main %}
+    <section id="page-header-contact">
+        <h2>Contact Us</h2>
+    </section>
+
+    <section id="contact-details" class="section-p1">
+        <div class="details">
+            <span>GET IN TOUCH</span>
+            <h2>Visit one of our agency locations or contact us today</h2>
+            <h3>Head Office</h3>
+            <div>
+                <li>
+                    <i class="fal fa-map"></i>
+                    <p>123 CS50 Street, Cambridge, MA</p>
+                </li>
+                <li>
+                    <i class="fal fa-envelope"></i>
+                    <p>support@cs50ecommerce.com</p>
+                </li>
+                <li>
+                    <i class="fal fa-phone-alt"></i>
+                    <p>+1 234 567 890</p>
+                </li>
+                <li>
+                    <i class="fal fa-clock"></i>
+                    <p>Monday to Saturday: 9:00am to 5:00pm</p>
+                </li>
+            </div>
+        </div>
+
+        <div class="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2947.5026827864413!2d-71.1182488!3d42.3744368!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e377427d7f0199%3A0x5937c65cee2427f0!2sHarvard%20University!5e0!3m2!1sen!2sin!4v1718393089937!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </section>
+
+    <section id="form-details">
+        <form action="/contact-us" method="POST">
+            <span>LEAVE A MESSAGE</span>
+            <h2>We would love to hear from you</h2>
+            <input type="text" placeholder="Your Name" required>
+            <input type="text" placeholder="E-mail" required>
+            <input type="text" placeholder="Subject" required>
+            <textarea name="" id="" cols="30" rows="10" placeholder="Your Message" required></textarea>
+            <button type="submit" class="normal">Submit</button>
+        </form>
+
+    </section>
+{% endblock %}
